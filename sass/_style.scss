@@ -1,0 +1,376 @@
+@import "_fonts.scss";
+@import '_mixins.scss';
+@import "_variables.scss";
+@import "_responsive.scss";
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: $fuenteNormal;
+}
+
+.list{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.list-justify{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+nav{
+    /*@extend .list;media*/
+    height: auto;
+    width: 100%;
+    justify-content: space-around;
+    background: $backgroundNav;
+    #search{
+        margin: 15px 0;
+        input{
+            border: none;
+            border-bottom: 1px solid $colorNav;
+            padding: 15px 5px;
+            background: $backgroundNav;
+        }
+        input:focus{
+            outline: none;
+            border-bottom: 2px solid $colorNav;
+        }
+        i{
+            padding: 15px 5px;
+            color: $colorNav;
+        }
+    }
+    #options{
+        
+        ul{
+            @extend .list;
+            @include ulNav(6,$colorNav);
+            justify-content: space-around;
+        }
+    }
+    #socialIcons{
+        width: 15%;
+        ul{
+            @extend .list;
+            @include ulNav(4,$colorNav);
+            justify-content: space-around;
+        }
+    }
+}
+#portada{
+    @extend .list-justify;
+    align-items: center;
+    width: 100%;
+    div:nth-of-type(1){
+        text-align: center;
+        position: absolute;
+        color: white;
+        @for $count from 1 to 4{
+            p:nth-of-type(#{$count}){
+                @if $count==2{
+                    font-family: $fuenteBolder;
+                    letter-spacing: 5px;
+                    font-size: 60px;
+                    font-weight: bolder;
+                }@else{
+                    letter-spacing: 1px;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+    img{
+        width: 100%;
+    }
+}
+
+#shortImages{
+    height: auto;
+    @extend .list-justify;
+    margin: 20px 0;
+    @include rowImages(3,250px);
+    div{
+        h3:hover{
+            background: $colorBlue;
+            color: white;
+            transition: all 1s;
+        }
+        h3:not(:hover){
+            background: white;
+            color: $colorBlue;
+            transition: all 1s;
+        }
+    }
+}
+
+#menciones{
+    /*@extend .list-justify;media*/
+    background: $backgroundNav;
+    padding: 35px 0;
+    width: 100%;
+    @include mencionesDiv(5, 145px, 50px, 15px, 30px);
+/*    > div:nth-of-type(1){
+        border-right: 2px solid $colorNav;
+    }media*/
+    > div:nth-of-type(2) > *{
+        align-items: flex-start;
+    }
+    > div:nth-of-type(3) > *, > div:nth-of-type(4) > *{
+        text-align: center;
+    }
+    > div:nth-of-type(3) > svg{
+        transform: rotate(215deg);
+        margin-bottom: 8px;
+    }
+    > div:nth-of-type(5) > *{
+        text-align: end;
+    }
+}
+
+#notas{
+    $divHeight: 760px;$divWidth: 75%; $borderRadius: 5px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 50px 0;
+    flex-direction: column;
+    > div{/*caja completa*/
+        height: $divHeight;
+        width: $divWidth;
+        border: 0.8px solid $backgroundNav;
+        border-radius: $borderRadius;
+        margin: 10px 0;
+        > img{
+            height: $divHeight - 230px;
+            width: 100%;
+            border-top-left-radius: $borderRadius;
+            border-top-right-radius: $borderRadius;
+        }
+        > div{/*caja de texto*/
+            padding: 30px 55px;
+            font-size: 12px;
+            @include articulos(3, 25px);
+            > div{/*3 cajas*/
+                display: flex;
+                > div{/*caja de los iconos con números*/
+                    width: 50px;
+                    display: flex;
+                    align-items: center;
+                }
+            }
+            > div:nth-of-type(1) {
+                margin-bottom: 25px;
+                > p{
+                    margin-left: 13px;
+                }
+            }
+            > div:nth-of-type(2) {
+                > a{
+                    color: black;
+                    width: 100%;
+                    > h2{
+                        margin-bottom: 20px;
+                    }
+                    > p{
+                        margin-bottom: 40px;
+                    }
+                }
+                > a:hover{
+                    color: $colorBlue;
+                    transition: all .3s;
+                }
+                > a:not(:hover){
+                    color: black;
+                    transition: all .5s;
+                }
+            }
+        }
+    }
+}
+#socialLinks{
+    $socialIconSize: 25px;
+    height: auto;
+    width: 100%;
+    background: $colorBlue;
+    @extend .list-justify;
+    > ul{
+        width: 55%;
+        display: flex;
+        justify-content: space-between;
+        > li{
+            padding: 40px 0;
+            > a{
+                color: white;
+                display: flex;
+                flex-direction: row;
+                > h4{
+                    margin-left: 10px;
+                    display: flex;
+                    align-items: center;
+                }
+                > svg{
+                    font-size: $socialIconSize;
+                }
+            }
+        }
+    }
+}
+#attractions{
+    > ul{
+        @extend .list-justify;
+        /*height: $attractionsHeight;media*/
+        width: 100%;
+        > li{
+            /*width: $attractionsWidth;media*/
+            /*height: $attractionsHeight;media*/
+            box-sizing: border-box;
+            > div{
+                /*width: $attractionsWidth;media*/
+                /*height: $attractionsHeight;media*/
+                cursor: pointer;
+                position: absolute;
+            }
+            > h3{
+                position: absolute;
+                /*width: $attractionsWidth;media*/
+                /*height: $attractionsHeight;media*/
+                color: transparent;
+                @extend .list-justify;
+                align-items: center;
+            }
+        }
+        @for $count from 1 to 6{
+            $s:'"https://static.parastorage.com/services/instagram-cdn/1.691.0/assets/ig-templates-accounts/Editor/Traveller%20Blog/0#{$count}.jpg"';
+            > li:nth-of-type(#{$count}){
+                background-image: url(#{$s});
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            > li:nth-of-type(#{$count}):hover{
+                > div{
+                    background: #999999;
+                    opacity: 0.7;
+                    transition: all .5s ease-out;
+                }
+                > h3{
+                    color: white;
+                    transition: all .5s;
+                }
+            }
+            > li:nth-of-type(#{$count}):not(:hover){
+                > div{
+                    background: transparent;
+                    transition: all .5s ease-out;
+                }
+                > h3{
+                    color: transparent;
+                    transition: all .5s;
+                }
+            }
+        }
+    }
+}
+footer{
+    background: $colorNav;
+    @extend .list-justify;
+    height: auto;
+    *{
+        font-family: 'Caveat', cursive;
+        font-size: 22px;
+        color: white;
+        letter-spacing: 1px;
+    }
+    > div{
+        /*padding: 150px 50px; media*/
+    }
+    > div:nth-of-type(1){
+        /*flex-flow: row wrap;media*/
+        /*width: 40%;media*/
+        > div{
+            width: 100%;
+            margin-bottom: 60px;
+            @extend .list-justify;
+            > img{
+                width: 140px;
+                height: 140px;
+            }
+            > div{
+                margin: 15px 40px;
+                > h3{
+                    padding-bottom: 20px;
+                }
+                > p{
+                    line-height: 20px;
+                }
+                > a{
+                    text-decoration: underline;
+                }
+                > a:hover{
+                    color: #25cff2;
+                    transition: all .5s;
+                }
+                > a:not(:hover){
+                    color: white;
+                    transition: all .5s;
+                }
+            }
+        }
+        > p{
+            >a{
+                text-decoration: underline;
+            }
+            > a:hover{
+                color: #25cff2;
+                transition: all .5s;
+            }
+            > a:not(:hover){
+                color: white;
+                transition: all .5s;
+            }
+        }
+    }
+    > div:nth-of-type(2){
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        > form{
+            display: flex;
+            flex-direction: column;
+            > input{
+                font-size: 16px;
+                background-color: transparent;
+                border: 1px solid white;
+                margin: 10px 0;
+            }
+            > input::placeholder{
+                color: white;
+            }
+            > button{
+                background: $colorBlue;
+                border: none;
+            }
+        }
+        > ul{
+            display: flex;
+            margin-top: auto;
+            *{
+                font-size: 17px;
+            }
+            > li{
+                padding: 0 10px;
+            }
+        }
+    }
+}
+#arrow-up{
+    position: absolute;
+    /*width: 100%;*/
+    @extend .list-justify;
+    align-self: flex-end;
+    font-size: 50px;
+    color: white;
+    margin: 35px;
+}

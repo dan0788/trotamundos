@@ -1,0 +1,82 @@
+@mixin ulNav($itemsAmount, $colorText){
+    @for $count from 1 to ($itemsAmount+1){
+        li:nth-of-type(#{$count}) > a{
+            color: $colorText;
+        }
+
+    }
+}
+
+@mixin rowImages($imagesNumber, $squareDimensions){
+    @for $count from 1 to ($imagesNumber+1){
+        div:nth-of-type(#{$count}){
+            height: $squareDimensions;
+            width: $squareDimensions;
+            margin: 0 10px;
+            @extend .list-justify;
+            align-items: center;
+            h3{
+                position: absolute;
+                padding: 20px 30px;
+                background: white;
+                color: #0000ff;
+            }
+            img{
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+}
+
+@mixin mencionesDiv($divAmount, $width, $height, $vertPadding, $horizPadding){
+    @for $count from 1 to ($divAmount + 1){
+        > div:nth-of-type(#{$count}){
+            height: $height;
+            padding: $vertPadding $horizPadding;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            > *{
+                width: 100%;
+            }
+        }
+    }
+}
+
+@mixin articulos($itemsAmount, $userIconSize){
+    @for $count from 1 to ($itemsAmount + 1){
+        @if $count==1{
+            > div:nth-of-type(#{$count}){
+                div{/*caja de los iconos*/
+                    width: $userIconSize;
+                    height: $userIconSize;
+                    svg{
+                        font-size: $userIconSize;
+                    }
+                }
+            }
+        }
+        @if $count==3{
+            > div:nth-of-type(#{$count}){
+                > div{/*caja de los iconos con números*/
+                    width: auto;
+                    height: $userIconSize;
+                    svg{
+                        font-size: calc(#{$userIconSize} - 75%);
+                    }
+                }
+                > div:nth-of-type(#{$count}){
+                    margin-left: auto;
+                    > svg{
+                        color: red;
+                    }
+                }
+                p{
+                    margin: 0 5px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,298 @@
+@media screen and (min-width: 1025px){
+    nav{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        > div:nth-of-type(2){
+            width: 50%;
+            > ul{
+
+                > li{
+
+                }
+            }
+        }
+    }
+    #menciones{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 145px;
+        $colorNav: #6C6656;
+        > div:nth-of-type(1){
+            border-right: 2px solid $colorNav;
+        }
+    }
+    $attractionsWidth: calc(100%/5); 
+    $attractionsHeight: 240px;
+    #attractions{
+        > ul{
+            height: $attractionsHeight;
+            > li{
+                width: $attractionsWidth;
+                height: $attractionsHeight;
+                > div{
+                    width: $attractionsWidth;
+                    height: $attractionsHeight;
+                }
+                > h3{
+                    width: $attractionsWidth;
+                    height: $attractionsHeight;
+                }
+            }
+        }
+    }
+    footer{
+        > div{
+            padding: 150px 50px;
+        }
+        > div:nth-of-type(1){
+            width: 40%;
+            flex-flow: row wrap;
+        }
+    }
+}
+@media (max-width: 1024px) and (min-width: 768px){
+    nav{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        > div:nth-of-type(2){
+            width: 50%;
+            > ul{
+
+                > li{
+
+                }
+            }
+        }
+    }
+    #menciones{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 145px;
+        $colorNav: #6C6656;
+        > div:nth-of-type(1){
+            border-right: 2px solid $colorNav;
+        }
+    }
+    $attractionsWidth: calc(100%/5); 
+    $attractionsHeight: 180px;
+    #attractions{
+        > ul{
+            height: $attractionsHeight;
+            > li{
+                width: $attractionsWidth;
+                height: $attractionsHeight;
+                > div{
+                    width: $attractionsWidth;
+                    height: $attractionsHeight;
+                }
+                > h3{
+                    width: $attractionsWidth;
+                    height: $attractionsHeight;
+                }
+            }
+        }
+    }
+    footer{
+        > div{
+            padding: 150px 10px;
+        }
+        > div:nth-of-type(1){
+            width: 55%;
+            flex-flow: row wrap;
+        }
+    }
+}
+@media (max-width: 767px) and (min-width: 596px){
+    nav{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        > div{
+            margin: 10px 0;
+        }
+        > div:nth-of-type(2){
+            width: 80%;
+            > ul{
+
+                > li{
+
+                }
+            }
+        }
+    }
+    #menciones{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 90%;
+        > div{
+            width: 90%;
+        }
+        > div:nth-of-type(1){
+            border: none;
+        }
+    }
+    $attractionsWidth: calc(100%/5); 
+    $attractionsHeight: 180px;
+    #attractions{
+        > ul{
+            height: $attractionsHeight;
+            > li{
+                width: $attractionsWidth;
+                height: $attractionsHeight;
+                > div{
+                    width: $attractionsWidth;
+                    height: $attractionsHeight;
+                }
+                > h3{
+                    width: $attractionsWidth;
+                    height: $attractionsHeight;
+                }
+            }
+        }
+    }
+    footer{
+        > div{
+            padding: 150px 10px;
+        }
+        > div:nth-of-type(1){
+            width: 55%;
+            > div{
+                flex-flow: column wrap;
+            }
+        }
+    }
+}
+@media (max-width: 596px) and (min-width: 425px){
+    nav{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        > div{
+            margin: 10px 0;
+        }
+        > div:nth-of-type(2){
+            width: 90%;
+            > ul{
+
+                > li{
+
+                }
+            }
+        }
+    }
+    #menciones{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 90%;
+        > div{
+            width: 90%;
+        }
+        > div:nth-of-type(1){
+            border: none;
+        }
+    }
+    $attractionsWidth: calc(100%/5); 
+    $attractionsHeight: 110px;
+    #attractions{
+        > ul{
+            height: $attractionsHeight;
+            > li{
+                width: $attractionsWidth;
+                height: $attractionsHeight;
+                > div{
+                    width: $attractionsWidth;
+                    height: $attractionsHeight;
+                }
+                > h3{
+                    width: $attractionsWidth;
+                    height: $attractionsHeight;
+                }
+            }
+        }
+    }
+    footer{
+        > div{
+            padding: 50px 10px;
+        }
+        > div:nth-of-type(1){
+            width: 55%;
+            > div{
+                flex-flow: column wrap;
+            }
+        }
+    }   
+}
+@media (max-width: 424px){
+    nav{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        > div{
+            margin: 10px 0;
+        }
+        > div:nth-of-type(2){
+            width: 100%;
+            > ul{
+
+                > li{
+
+                }
+            }
+        }
+        #socialIcons{
+            > ul{
+                > li{
+                    margin: 0 8px;
+                }
+            }
+        }
+    }
+    #menciones{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 90%;
+        > div{
+            width: 90%;
+        }
+        > div:nth-of-type(1){
+            border: none;
+        }
+    }
+    $attractionsWidth: calc(100%/5); 
+    $attractionsHeight: 110px;
+    #attractions{
+        > ul{
+            height: $attractionsHeight;
+            > li{
+                width: $attractionsWidth;
+                height: $attractionsHeight;
+                > div{
+                    width: $attractionsWidth;
+                    height: $attractionsHeight;
+                }
+                > h3{
+                    width: $attractionsWidth;
+                    height: $attractionsHeight;
+                }
+            }
+        }
+    }
+    footer{
+        > div{
+            padding: 50px 10px;
+        }
+        > div:nth-of-type(1){
+            width: 55%;
+            > div{
+                flex-flow: column wrap;
+            }
+        }
+    }
+}
